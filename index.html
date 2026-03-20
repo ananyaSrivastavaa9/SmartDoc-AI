@@ -10,6 +10,7 @@
 
 <div class="container">
 
+  <!-- LEFT PANEL -->
   <div class="card">
     <h1>SmartDoc AI</h1>
     <p class="subtitle">Azure Document Intelligence</p>
@@ -24,30 +25,47 @@
 
     <div class="divider">OR</div>
 
-    <input type="text" id="urlInput" placeholder="Paste URL">
+    <input type="text" id="urlInput" placeholder="Paste Image/PDF URL">
 
     <button onclick="analyze()">Analyze</button>
   </div>
 
+  <!-- RIGHT PANEL -->
   <div class="dashboard">
 
-    <!-- KEYWORDS -->
-    <div class="ai-box">
-      <h3>🔑 Important Keywords</h3>
-      <p id="keywords">No keywords yet...</p>
+    <!-- PREVIEW -->
+    <div class="preview">
+      <img id="imgPreview" class="hidden"/>
+      <iframe id="pdfPreview" class="hidden"></iframe>
     </div>
 
-    <!-- SUMMARY -->
-    <div class="ai-box">
-      <h3>📄 Summary</h3>
-      <p id="summary">No summary yet...</p>
+    <!-- STATS -->
+    <div class="stats">
+      <div class="box"><h3 id="pages">0</h3><p>Pages</p></div>
+      <div class="box"><h3 id="words">0</h3><p>Words</p></div>
+      <div class="box"><h3 id="lines">0</h3><p>Lines</p></div>
     </div>
 
     <!-- OUTPUT -->
     <div class="output">
+      <div id="loader" class="loader hidden"></div>
       <pre id="result">✨ Results will appear here...</pre>
     </div>
 
+    <!-- AI SUMMARY -->
+    <div class="ai-box">
+      <h3>🤖 AI Summary</h3>
+      <p id="summary">No summary yet...</p>
+    </div>
+
+    <!-- CHAT -->
+    <div class="chat">
+      <input type="text" id="question" placeholder="Ask about document...">
+      <button onclick="askQuestion()">Ask</button>
+      <p id="answer"></p>
+    </div>
+
+    <!-- ACTIONS -->
     <div class="actions">
       <button onclick="copyText()">Copy</button>
       <button onclick="downloadText()">Download</button>
