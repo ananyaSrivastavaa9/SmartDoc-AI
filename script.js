@@ -1,40 +1,13 @@
 const fileInput = document.getElementById("fileInput");
 let fullText = "";
 
-// PREVIEW
-fileInput.addEventListener("change", () => {
-  const file = fileInput.files[0];
-  const img = document.getElementById("imgPreview");
-  const pdf = document.getElementById("pdfPreview");
-
-  img.classList.add("hidden");
-  pdf.classList.add("hidden");
-
-  if (!file) return;
-
-  const url = URL.createObjectURL(file);
-
-  if (file.type.includes("image")) {
-    img.src = url;
-    img.classList.remove("hidden");
-  } else if (file.type === "application/pdf") {
-    pdf.src = url;
-    pdf.classList.remove("hidden");
-  }
-});
-
 // ANALYZE
 async function analyze() {
+
   const endpoint = document.getElementById("endpoint").value;
   const key = document.getElementById("key").value;
   const file = fileInput.files[0];
   const url = document.getElementById("urlInput").value;
-
-  const loader = document.getElementById("loader");
-  const resultBox = document.getElementById("result");
-
-  loader.classList.remove("hidden");
-  resultBox.innerText = "🔍 Analyzing document...";
 
   let response;
 
@@ -74,50 +47,49 @@ async function analyze() {
   }
 
   let text = "";
-  let words = 0;
-  let lines = 0;
 
   result.analyzeResult.pages.forEach(p => {
-    lines += p.lines.length;
     p.lines.forEach(l => {
-      text += l.content + "\n";
-      words += l.content.split(" ").length;
+      text += l.content + " ";
     });
   });
 
   fullText = text;
 
-  document.getElementById("result").innerText = text || "⚠️ No text found";
-  document.getElementById("pages").innerText = result.analyzeResult.pages.length;
-  document.getElementById("words").innerText = words;
-  document.getElementById("lines").innerText = lines;
+  document.getElementById("result").innerText = text;
 
   generateSummary(text);
+  extractKeywords(text);
+}
 
-  loader.classList.add("hidden");
+// 🔑 KEYWORD EXTRACTION (SMART LOGIC)
+function extractKeywords(text) {
 
-  // 🔥 AUTO SCROLL FIX
-  document.getElementById("result").scrollIntoView({
-    behavior: "smooth"
+  const stopWords = ["the","is","and","of","to","in","a","for","on","with","as","by","an"];
+
+  let words = text.toLowerCase().split(/\W+/);
+
+  let freq = {};
+
+  words.forEach(word => {
+    if (!stopWords.includes(word) && word.length > 3) {
+      freq[word] = (freq[word] || 0) + 1;
+    }
   });
+
+  let sorted = Object.keys(freq).sort((a,b) => freq[b]-freq[a]);
+
+  let keywords = sorted.slice(0, 8);
+
+  document.getElementById("keywords").innerText =
+    keywords.join(", ");
 }
 
-// SUMMARY
+// 📄 SUMMARY
 function generateSummary(text) {
-  let sentences = text.split(".").slice(0, 3);
-  document.getElementById("summary").innerText = sentences.join(". ") + ".";
-}
-
-// CHAT
-function askQuestion() {
-  let q = document.getElementById("question").value.toLowerCase();
-  let ans = "Not found in document";
-
-  if (fullText.toLowerCase().includes(q)) {
-    ans = "Yes, this is mentioned in the document.";
-  }
-
-  document.getElementById("answer").innerText = ans;
+  let sentences = text.split(".").slice(0, 2);
+  document.getElementById("summary").innerText =
+    sentences.join(". ") + ".";
 }
 
 // COPY
