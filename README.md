@@ -1,3 +1,6 @@
+![Status](https://img.shields.io/badge/Status-Live-green)
+![Made With](https://img.shields.io/badge/Made%20With-JavaScript-blue)
+
 # SmartDoc AI — Azure Document Intelligence Dashboard
 
 ## Overview
