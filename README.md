@@ -31,6 +31,15 @@ https://ananyasrivastavaa9.github.io/SmartDoc-AI/
 
 ---
 
+## Use Case
+
+This project can be used for:
+- Automating document data extraction
+- Processing invoices, forms, and scanned documents
+- Building intelligent document-based applications
+
+---
+
 ## Screenshots
 
 ### Application Interface
