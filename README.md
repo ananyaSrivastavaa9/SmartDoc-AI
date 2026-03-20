@@ -1,78 +1,114 @@
-# 🚀 SmartDoc AI – Azure Document Intelligence Dashboard
+# SmartDoc AI — Azure Document Intelligence Dashboard
 
-SmartDoc AI is a modern web-based application that uses Azure Document Intelligence to analyze documents (PDFs & images) and extract meaningful text with AI-powered features like summarization and document querying.
+## Overview
 
----
+**Azure Document Intelligence** (formerly Form Recognizer) is a cloud-based AI service by Microsoft that enables developers to extract text, key-value pairs, and structured data from documents such as PDFs, images, and scanned files. It uses advanced machine learning models to analyze and process documents in real time.
 
-## ✨ Features
-
-* 📂 Upload PDF, JPG, PNG files
-* 🌐 Analyze documents via URL
-* 📊 Real-time analytics (pages, words, lines)
-* 🤖 AI-powered summary generation
-* 💬 Ask questions about the document
-* 📄 Download extracted text
-* 🎨 Premium UI/UX (glassmorphism design)
+This project, **SmartDoc AI**, is a web-based dashboard built on top of Azure Document Intelligence. It provides an interactive interface to upload or analyze documents and visualize extracted content along with additional AI-powered features.
 
 ---
 
-## 🖼️ Preview
+## Live Demo
 
-### 🔹 Home Interface
-<img width="1919" height="966" alt="image" src="https://github.com/user-attachments/assets/2f9a12a3-b4b6-4a45-8ad0-86d88c69e825" />
-
----
-
-### 🔹 Document Analysis Result
-<img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/3999aac1-22b2-4dfb-97df-9cd570b6abf5" />
-<img width="1919" height="965" alt="image" src="https://github.com/user-attachments/assets/a5208f13-bb4a-429d-b0b7-99a42eef96c8" />
+https://ananyasrivastavaa9.github.io/SmartDoc-AI/
 
 ---
 
-### 🔹 AI Summary & Chat
-<img width="1915" height="952" alt="image" src="https://github.com/user-attachments/assets/aa161c65-11c3-4fe6-9400-1606d9425a9c" />
+## Features
+
+* Upload and analyze documents (PDF, JPG, PNG)
+* Analyze documents directly via URL
+* Real-time text extraction using Azure Document Intelligence
+* Document preview (image/PDF)
+* Analytics dashboard (pages, words, lines)
+* Basic AI-powered summary generation
+* Simple document query system (chat-like interaction)
+* Download extracted text
+* Clean and responsive user interface
 
 ---
 
-## ⚙️ Tech Stack
+## Screenshots
+
+### Application Interface
+
+<img width="1913" height="963" alt="image" src="https://github.com/user-attachments/assets/e7b29159-334c-40ec-b3e0-9bd4d7dc6549" />
+
+
+### Extracted Output & Analytics
+
+<img width="1919" height="970" alt="image" src="https://github.com/user-attachments/assets/02d61583-4b38-45b3-9a32-26e233b9749c" />
+
+
+### AI Summary and Query
+
+<img width="1919" height="962" alt="image" src="https://github.com/user-attachments/assets/bfc3c5c3-1e50-4e14-a1d7-99351ef0307c" />
+
+
+---
+
+## Tech Stack
 
 * HTML
-* CSS (Glassmorphism UI)
+* CSS (modern UI with glassmorphism design)
 * JavaScript (Vanilla JS)
-* Azure Document Intelligence API
+* Azure Document Intelligence REST API
 
 ---
 
-## 🚀 How to Run
+## How It Works
 
-1. Download or clone this repository
-2. Open `index.html` in your browser
-3. Enter your Azure Endpoint & API Key
-4. Upload a document or paste a URL
+1. The user provides an Azure endpoint and API key.
+2. A document is uploaded or a public URL is provided.
+3. The application sends the document to Azure Document Intelligence.
+4. The service processes the document and returns structured results.
+5. The frontend extracts:
+
+   * Text content
+   * Page-level information
+6. Additional processing is applied to:
+
+   * Generate a short summary
+   * Enable simple query-based interaction
+7. Results are displayed in a dashboard format.
+
+---
+
+## Setup Instructions
+
+1. Clone or download this repository
+2. Open `index.html` in any modern browser
+3. Enter your Azure Document Intelligence:
+
+   * Endpoint
+   * API Key
+4. Upload a document or provide a URL
 5. Click **Analyze**
 
 ---
 
-## 🔐 Security Note
+## Notes
 
-* API key is entered dynamically (not stored in code)
-* Some URLs may not work due to CORS restrictions
+* API credentials are not stored in the code; they are provided at runtime.
+* Some URLs may not work due to external access restrictions (CORS).
+* This project is frontend-only and directly interacts with Azure APIs.
 
 ---
 
-## 📌 Future Improvements
+## Future Improvements
 
 * Backend integration for secure API handling
-* Real AI integration (OpenAI)
-* Document history storage
-* User authentication system
+* Integration with advanced AI models for better summarization
+* Document history and storage
+* Authentication system
+* Improved query understanding
 
 ---
 
-## 👩‍💻 Author
+## Author
 
-**Ananya Srivastava**
+Ananya Srivastava
 
 ---
 
-⭐ If you like this project, consider giving it a star!
+If you found this project useful, consider starring the repository.
