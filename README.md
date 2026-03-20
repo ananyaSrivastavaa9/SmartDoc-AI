@@ -21,22 +21,16 @@ SmartDoc AI is a modern web-based application that uses Azure Document Intellige
 ### 🔹 Home Interface
 <img width="1919" height="966" alt="image" src="https://github.com/user-attachments/assets/2f9a12a3-b4b6-4a45-8ad0-86d88c69e825" />
 
-<img src="assets/screenshot1.png" width="700"/>
-
 ---
 
 ### 🔹 Document Analysis Result
 <img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/3999aac1-22b2-4dfb-97df-9cd570b6abf5" />
 <img width="1919" height="965" alt="image" src="https://github.com/user-attachments/assets/a5208f13-bb4a-429d-b0b7-99a42eef96c8" />
 
-<img src="assets/screenshot2.png" width="700"/>
-
 ---
 
 ### 🔹 AI Summary & Chat
 <img width="1915" height="952" alt="image" src="https://github.com/user-attachments/assets/aa161c65-11c3-4fe6-9400-1606d9425a9c" />
-
-<img src="assets/screenshot3.png" width="700"/>
 
 ---
 
